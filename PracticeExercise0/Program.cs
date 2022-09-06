@@ -7,26 +7,26 @@ namespace PracticeExcercise0
 
         static void Main(string[] args)
         {
-            //Console.WriteLine(IsPalindrome("mom "));
-            //Console.WriteLine(IsPalindrome("Mom"));
+            Console.WriteLine(IsPalindrome("mom "));
+            Console.WriteLine(IsPalindrome("Mom"));
             Console.WriteLine(IsPalindrome("Race car"));
             Console.WriteLine(IsPalindrome("A nut for a jar of tuna"));
 
-            //Console.WriteLine(Reverse("coffee"));
-            //Console.WriteLine(Reverse("abcdefghijklmnopqrstuvwxyz"));
-            //Console.WriteLine(Reverse("Dad"));
-            //Console.WriteLine(Reverse(""));
-            //Console.WriteLine(Reverse("savannaH"));
+            Console.WriteLine(Reverse("coffee"));
+            Console.WriteLine(Reverse("abcdefghijklmnopqrstuvwxyz"));
+            Console.WriteLine(Reverse("Dad"));
+            Console.WriteLine(Reverse(""));
+            Console.WriteLine(Reverse("savannaH"));
 
             Console.WriteLine(ReverseInt(369)); // 963
             Console.WriteLine(ReverseInt(-369)); // -963
 
 
-            //Console.WriteLine(IsUnique("mom"));
-            //IsUnique("");
-            //IsUnique("mom");
-            //IsUnique("Robbie");
-            //IsUnique("Judah");
+            Console.WriteLine(IsUnique("mom"));
+            IsUnique("");
+            IsUnique("mom");
+            IsUnique("Robbie");
+            IsUnique("Judah");
 
         }
 
@@ -102,7 +102,25 @@ namespace PracticeExcercise0
         // #4
         public static bool IsNeilNumber(int i)
         {
-            return true;
+            int original_number = i;
+            double added_number = 0;
+            int length = original_number.ToString().Length;
+
+            while(i > 0)
+            {
+                int j = i % 10;
+                added_number += Math.Pow(j, length);
+                i /= 10;
+            }
+
+            if(added_number == original_number)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
     }
